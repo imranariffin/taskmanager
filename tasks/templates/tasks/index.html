@@ -1,0 +1,22 @@
+{% extends "tasks/base.html" %}
+
+{% block content %}
+
+<h2>Tasks</h2>
+
+{% if ls_tasks %}
+	<p>Task list:</p>
+
+	<table border="1">
+		{% for task in ls_tasks %}
+			<tr>
+				<td><a href="{% url 'tasks:detail' task.id %}">{{ task.title }}</a></td>
+				<td>{{ task.description }}</td>
+				<td><a href="{% url 'tasks:edit' task.id %}">Edit</a></td>
+			</tr>
+		{% endfor %}
+	</table>
+
+{% endif %}
+
+{% endblock content %}

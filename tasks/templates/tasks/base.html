@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Base</title>
+</head>
+<body>
+		<a href="{% url 'tasks:index' %}">Tasks</a>
+		<a href="{% url 'tasks:create' %}">Create New Task</a>
+		<a href="#">Login</a>
+		<a href="#">Signup</a>
+
+	{% block content %}{% endblock content %}
+</body>
+</html>
