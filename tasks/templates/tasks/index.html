@@ -4,11 +4,16 @@
 
 <h2>Tasks</h2>
 
-{% if ls_tasks %}
+{% if task_list %}
 	<p>Task list:</p>
 
 	<table border="1">
-		{% for task in ls_tasks %}
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Action</th>
+		</tr>
+		{% for task in task_list %}
 			<tr>
 				<td><a href="{% url 'tasks:detail' task.id %}">{{ task.title }}</a></td>
 				<td>{{ task.description }}</td>
@@ -16,7 +21,15 @@
 			</tr>
 		{% endfor %}
 	</table>
-
+{% else %}
+	<table border="1">
+		<tr>
+			<th>Title</th>
+			<th>User</th>
+			<th>Description</th>
+			<th>Action</th>
+		</tr>
+ 	</table>
 {% endif %}
 
 {% endblock content %}
