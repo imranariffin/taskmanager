@@ -82,26 +82,6 @@ class EditTask(LoginRequiredMixin, vanilla.UpdateView):
 
 		return HttpResponseRedirect(self.get_success_url())
 
-	# def get(self, request, *args, **kwargs):
-	# 	task = Task.objects.get(id=kwargs['pk'])
-	# 	initial = {'title': task.title, 'description': task.description}
-	# 	form = self.form_class(initial=initial)
-
-	# 	return render(request, self.template_name, {'form': form})
-
-	# def post(self, request, *args, **kwargs):
-	# 	form = self.form_class(request.POST)
-	# 	if form.is_valid():
-	# 		task = Task.objects.get(id=self.kwargs['pk'])
-
-	# 		task.title = form.data['title']
-	# 		task.description = form.data['description']
-	# 		task.save()
-
-	# 		return HttpResponseRedirect(self.get_success_url())
-
-	# 	return HttpResponse('fail update')
-
 # task
 def all_tasks(request):
 
