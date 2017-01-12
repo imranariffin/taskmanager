@@ -11,13 +11,20 @@
 		<tr>
 			<th>Title</th>
 			<th>Description</th>
-			<th>Action</th>
+			<th>Edit</th>
+			<th>Delete</th>
 		</tr>
 		{% for task in task_list %}
 			<tr>
 				<td><a href="{% url 'tasks:detail' task.id %}">{{ task.title }}</a></td>
 				<td>{{ task.description }}</td>
 				<td><a href="{% url 'tasks:edit' task.id %}">Edit</a></td>
+				<td>
+					<form action="{% url 'tasks:delete' task.id %}" method="POST">
+						{% csrf_token %}
+						<button type="submit">Delete</button>
+					</form>
+				</td>
 			</tr>
 		{% endfor %}
 	</table>

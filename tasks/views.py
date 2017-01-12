@@ -10,7 +10,7 @@ import datetime
 
 from .models import Task
 
-from .forms import TaskForm
+from .forms import TaskForm, TaskDeleteForm
 
 # class IndexView(LoginRequiredMixin, generic.ListView):
 # 	login_url = '/login/'
@@ -81,6 +81,10 @@ class EditTask(LoginRequiredMixin, vanilla.UpdateView):
 		task.save()
 
 		return HttpResponseRedirect(self.get_success_url())
+
+def delete_task(request, pk):
+	Task.objects.get(pk=pk).delete()
+	return HttpResponseRedirect('/tasks')
 
 # task
 def all_tasks(request):

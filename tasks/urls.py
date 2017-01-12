@@ -12,4 +12,5 @@ urlpatterns = [
 	url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
 	url(r'^create/$', views.CreateTask.as_view(), name='create'),
 	url(r'^(?P<pk>[0-9]+)/edit/$', views.EditTask.as_view(), name='edit'),
+	url(r'^(?P<pk>[0-9]+)/delete/$', views.delete_task, name='delete'),
 ]

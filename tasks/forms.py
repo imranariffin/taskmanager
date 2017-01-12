@@ -10,3 +10,9 @@ class TaskForm(forms.ModelForm):
 
 	# title = forms.CharField(label='Title', max_length=200)
 	# description = forms.CharField(label='Description', max_length=800)
+
+class TaskDeleteForm(forms.ModelForm):
+
+	class Meta:
+		model = Task
+		fields = ('title',)
